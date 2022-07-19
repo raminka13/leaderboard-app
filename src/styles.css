@@ -1,17 +1,114 @@
 * {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-decoration: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    height: 100vh;
-    width: 100vw;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#app-title {
+  width: 100%;
+  text-align: center;
+  margin: 1.25em;
+}
+
+#app-container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#scores {
+  width: 40%;
+  margin-right: 20px;
+}
+
+#scores h3 {
+  width: 70%;
+  display: inline-block;
+}
+
+#refresh-btn {
+  cursor: pointer;
+  text-align: center;
+  width: 20%;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  background-color: #d0d0d0;
+}
+
+#scores-list {
+  min-height: 40px;
+  border: 2px solid #464646;
+}
+
+#scores-list .score:nth-child(even) {
+  background-color: #bbb;
+}
+
+#add-scores {
+  margin-left: 20px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#add-scores h3 {
+  width: 90%;
+  display: inline-block;
+}
+
+#form-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-btn {
+  width: fit-content;
+  padding: 0.5em 0.75em;
+  align-self: flex-end;
+  height: 30px;
+  background-color: #464646;
+  border-radius: 0;
+  color: #fff;
+}
+
+#submit-btn:hover {
+  background-color: #dbe7f0;
+  color: #2b434e;
+}
+
+li.score {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #d6d6d6;
+  transition: all 100ms ease;
+}
+
+input#name-input,
+input#score-input {
+  margin: 0.25em 0;
+  background-color: #d6d6d6;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  border: 2px solid #464646;
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
