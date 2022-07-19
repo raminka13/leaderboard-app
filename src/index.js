@@ -1,7 +1,7 @@
 import './styles.css';
-import UI from './UI.js';
-import Storage from './Storage.js';
-import Score from './Score.js';
+import UI from './UI';
+import Storage from './Storage';
+import Score from './Score';
 
 document.addEventListener('DOMContentLoaded', UI.showScores);
 

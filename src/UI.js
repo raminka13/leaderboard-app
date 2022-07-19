@@ -1,4 +1,4 @@
-import Storage from './Storage.js';
+import Storage from './Storage';
 
 export default class UI {
   static showScores() {
