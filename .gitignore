@@ -1,0 +1,10 @@
+# Ignore Mac system files
+.DS_store
+
+#Ignode node_modules
+node_modules/
+
+#Ignore Local Linters
+.hintrc
+.stylelintrc.json
+.eslintrc.json
