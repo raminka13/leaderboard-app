@@ -1,7 +1,6 @@
 import './styles.css';
 import UI from './UI';
-import Storage from './Storage';
-import Score from './Score';
+import API from './API';
 
 document.addEventListener('DOMContentLoaded', UI.showScores);
 
@@ -14,18 +13,11 @@ document.querySelector('#form-section').addEventListener('submit', (e) => {
 
   // Validation
   if (name === '' || points === '') {
-    // UI.showAlert('Please fill in all fields', 'danger', 1500);
+    UI.showAlert('Please fill in all fields', 'danger', 1500);
   } else {
     // Start a new Score
-    const score = new Score(name, points);
-
-    // Add Score to UI
-    UI.addScoresToList(score);
-    // UI.showAlert('Task Added', 'success', 1500);
-
-    // Add Score to LocalStorage
-    Storage.addScore(score);
-
+    API.sendData(name, points);
+    UI.showAlert('Score Added, Please Refresh', 'success', 1500);
     // Clear fields
     UI.clearFields();
   }
@@ -34,5 +26,6 @@ document.querySelector('#form-section').addEventListener('submit', (e) => {
 const refresh = document.getElementById('refresh-btn');
 
 refresh.addEventListener('click', () => {
-  UI.deleteList();
+  UI.showAlert('Loading Scores', 'loading', 2700);
+  setTimeout(UI.deleteList, 1000);
 });
