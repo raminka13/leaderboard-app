@@ -31,17 +31,17 @@ body {
 
 .alert-loading {
   background-color: #e08b0cfc;
-  color: #ffffff;
+  color: #fff;
 }
 
 .alert-danger {
   background-color: #e63345e0;
-  color: #ffffff;
+  color: #fff;
 }
 
 .alert-success {
   background-color: #67dd5ce0;
-  color: #ffffff;
+  color: #fff;
 }
 
 #app-title {
@@ -151,7 +151,8 @@ li.score {
   border: 1px solid #d6d6d6;
   transition: all 100ms ease;
 }
-li.score p+p {
+
+li.score p + p {
   font-weight: 200;
 }
 
