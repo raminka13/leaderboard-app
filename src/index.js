@@ -2,7 +2,10 @@ import './styles.css';
 import UI from './UI';
 import API from './API';
 
-document.addEventListener('DOMContentLoaded', UI.showScores);
+document.addEventListener('DOMContentLoaded', () => {
+  UI.showAlert('Loading Scores', 'loading', 700);
+  UI.showScores();
+});
 
 document.querySelector('#form-section').addEventListener('submit', (e) => {
   // Prevent submit

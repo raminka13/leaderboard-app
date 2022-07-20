@@ -10,12 +10,16 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #eee;
+  background-color: #eeeeeeba;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-image: url(https://images.unsplash.com/photo-1553986782-9f6de60b51b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1698&q=80);
 }
 
 .alert {
@@ -30,8 +34,11 @@ body {
 }
 
 .alert-loading {
-  background-color: #e08b0cfc;
+  background-color: #48b3e1;
   color: #fff;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .alert-danger {
@@ -103,6 +110,7 @@ body {
   min-height: 40px;
   max-height: 450px;
   overflow-y: auto;
+  background-color: #fff;
 }
 
 #scores-list .score:nth-child(even) {
@@ -147,19 +155,34 @@ li.score {
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  border: 1px solid #d6d6d6;
+  justify-content: space-between;
   transition: all 100ms ease;
+}
+
+h4.index-show {
+  font-size: 36px;
+  font-weight: 600;
+  color: #4e4e4e8a;
+  letter-spacing: -6px;
+  flex: 1;
+  text-align: center;
+}
+
+li.score p {
+  flex: 3;
+  text-align: right;
+  font-weight: 600;
 }
 
 li.score p + p {
   font-weight: 200;
+  text-align: left;
 }
 
 input#name-input,
 input#score-input {
   margin: 0.25em 0;
-  background-color: #d6d6d6;
+  background-color: #fff;
   cursor: text;
   width: 100%;
   height: 40px;
