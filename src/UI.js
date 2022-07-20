@@ -1,12 +1,14 @@
 export default class UI {
   static async showScores() {
-    // Storage.getScores();
-    // const scoresArr = JSON.parse(localStorage.getItem('scoresArr')) || [];
     const id = 'L1Z7c5x8dgBTEjM8pqtd';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
     const game = await fetch(url);
     const scoresResult = await game.json();
-    const scoresArr = scoresResult.result;
+    const scoresUnsorted = scoresResult.result;
+    const scoresArr = scoresUnsorted.sort((a, b) => b.score - a.score);
+    for (let i = 0; i < scoresArr.length; i += 1) {
+      scoresArr[i].id = i + 1;
+    }
 
     scoresArr.forEach((score) => UI.addScoresToList(score));
   }
@@ -14,6 +16,11 @@ export default class UI {
   static addScoresToList(score) {
     const scoreContainer = document.getElementById('scores-list');
     const scoreLi = document.createElement('li');
+    const indexBox = document.createElement('h4');
+
+    scoreLi.appendChild(indexBox);
+    indexBox.textContent = score.id;
+    indexBox.className = 'index-show';
 
     scoreContainer.appendChild(scoreLi);
     scoreLi.className = 'score';
@@ -24,8 +31,8 @@ export default class UI {
     scoreLi.appendChild(player);
     scoreLi.appendChild(scorePl);
 
-    player.textContent = `${score.user}: `;
-    scorePl.textContent = ` ${score.score}`;
+    player.textContent = `${score.user}:`;
+    scorePl.textContent = `\xa0\xa0${score.score}💎`;
   }
 
   static clearFields() {
