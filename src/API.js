@@ -1,6 +1,6 @@
 export default class API {
   static sendData(name, gameScore) {
-    const id = 'tpbH0M4HiGifjDCgz6QP';
+    const id = 'L1Z7c5x8dgBTEjM8pqtd';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
     fetch(url, {
       method: 'POST',

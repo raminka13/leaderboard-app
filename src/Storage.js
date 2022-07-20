@@ -1,11 +1,12 @@
 export default class Storage {
   static async getScores() {
-    const id = 'tpbH0M4HiGifjDCgz6QP';
+    const id = 'L1Z7c5x8dgBTEjM8pqtd';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
     const game = await fetch(url);
-    const scoresArr = await game.json();
+    const scoresResult = await game.json();
+    const scoresArr = scoresResult.result;
 
-    localStorage.setItem('scoresArr', JSON.stringify(scoresArr));
+    // localStorage.setItem('scoresArr', JSON.stringify(scoresArr));
     return scoresArr;
   }
 
