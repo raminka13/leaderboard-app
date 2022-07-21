@@ -1,6 +1,6 @@
 export default class UI {
   static async showScores() {
-    const id = 'L1Z7c5x8dgBTEjM8pqtd';
+    const id = 'DdarivdkFNcymp2Fi4zG';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
     const game = await fetch(url);
     const scoresResult = await game.json();
@@ -50,8 +50,8 @@ export default class UI {
     const div = document.createElement('div');
     div.className = `alert alert-${className}`;
     div.appendChild(document.createTextNode(message));
-    const header = document.getElementById('app-title');
-    header.appendChild(div);
+    const scoresList = document.getElementById('scores-list');
+    scoresList.insertBefore(div, scoresList.firstChild);
 
     setTimeout(() => document.querySelector('.alert').remove(), timeOut);
   }

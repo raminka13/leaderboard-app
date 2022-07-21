@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 * {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Merriweather', serif;
   text-decoration: none;
   list-style: none;
   padding: 0;
@@ -13,7 +15,7 @@ body {
   background-color: #eeeeeeba;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   overflow: hidden;
   background-position: center;
@@ -23,8 +25,7 @@ body {
 }
 
 .alert {
-  position: absolute;
-  height: 270px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -36,17 +37,17 @@ body {
 .alert-loading {
   background-color: #48b3e1;
   color: #fff;
-  height: 100%;
-  top: 0;
-  left: 0;
+  height: 450px;
 }
 
 .alert-danger {
   background-color: #e63345e0;
   color: #fff;
+  height: 450px;
 }
 
 .alert-success {
+  height: 450px;
   background-color: #67dd5ce0;
   color: #fff;
 }
@@ -79,14 +80,18 @@ body {
 }
 
 #scores {
-  width: 40%;
+  width: 50%;
   margin-right: 20px;
 }
 
 #scores-header {
   width: 100%;
+  padding-bottom: 9px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  background-color: #f2f2f2;
 }
 
 #scores h3 {
@@ -97,6 +102,7 @@ body {
   cursor: pointer;
   text-align: center;
   display: inline-block;
+  height: 100%;
   padding: 0.25em 0.75em;
   background-color: #d0d0d0;
 }
@@ -107,9 +113,10 @@ body {
 
 #scores-list {
   border: 2px solid #464646;
-  min-height: 40px;
+  min-height: 450px;
   max-height: 450px;
   overflow-y: auto;
+  overflow-x: hidden;
   background-color: #fff;
 }
 
@@ -119,7 +126,7 @@ body {
 
 #add-scores {
   margin-left: 20px;
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
 }
@@ -128,6 +135,7 @@ body {
   width: 90%;
   display: inline-block;
   font-weight: 600;
+  height: 27px;
 }
 
 #form-section {
@@ -172,11 +180,14 @@ li.score p {
   flex: 3;
   text-align: right;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 li.score p + p {
   font-weight: 200;
   text-align: left;
+  letter-spacing: 3px;
 }
 
 input#name-input,
@@ -190,4 +201,55 @@ input#score-input {
   padding-left: 10px;
   font-weight: 400;
   font-size: 18px;
+}
+
+input#name-input:focus,
+input#score-input:focus {
+  outline: outset;
+}
+
+@media screen and (max-width: 650px) {
+  #app-title {
+    margin: 2em 0 0 0;
+  }
+
+  #app-title h1 {
+    font-size: 27px;
+  }
+
+  #app-title h2 {
+    font-size: 18px;
+  }
+
+  #app-container {
+    width: 95%;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #scores {
+    width: 100%;
+    margin: 0 0 1em 0;
+  }
+
+  #add-scores {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #scores-list {
+    max-height: 270px;
+  }
+
+  input#name-input,
+  input#score-input {
+  height: 27px;
+  border: 2px solid #464646;
+  padding-left: 0.25em;
+  font-weight: 400;
+  font-size: 16px;
+}
 }

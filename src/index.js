@@ -5,6 +5,7 @@ import API from './API';
 document.addEventListener('DOMContentLoaded', () => {
   UI.showAlert('Loading Scores', 'loading', 700);
   UI.showScores();
+  // API.getGameId();
 });
 
 document.querySelector('#form-section').addEventListener('submit', (e) => {
@@ -16,11 +17,12 @@ document.querySelector('#form-section').addEventListener('submit', (e) => {
 
   // Validation
   if (name === '' || points === '') {
-    UI.showAlert('Please fill in all fields', 'danger', 1500);
+    UI.showAlert('Please fill in all fields', 'danger', 1000);
   } else {
     // Start a new Score
     API.sendData(name, points);
-    UI.showAlert('Score Added, Please Refresh', 'success', 1500);
+    UI.deleteList();
+    UI.showAlert('Score Added', 'success', 1500);
     // Clear fields
     UI.clearFields();
   }
@@ -29,6 +31,6 @@ document.querySelector('#form-section').addEventListener('submit', (e) => {
 const refresh = document.getElementById('refresh-btn');
 
 refresh.addEventListener('click', () => {
+  UI.deleteList();
   UI.showAlert('Loading Scores', 'loading', 2700);
-  setTimeout(UI.deleteList, 1000);
 });
